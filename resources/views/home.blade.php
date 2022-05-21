@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Partner Preference') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,8 +13,19 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                
+                    @foreach($matches as $per)
+                    <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $per->first_name." ".$per->last_name}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{$per->annual_income}}</h6>
+                        <p class="card-text">{{ $per->family_type }}</p>
+                        <a href="#" class="card-link">More link...</a>
+                        <!-- <a href="#" class="card-link">Another link</a> -->
+                    </div>
+                    </div>
+                    @endforeach
 
-                    {{ __('You are logged in!') }}
                 </div>
             </div>
         </div>
