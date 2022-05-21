@@ -20,3 +20,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::group(['prefix'=>'/admin','middleware'=>['auth','admin']],function(){
+//     Route::get('/','AdminController@index')->name('admin');
+//     Route::get('/file-manager',function(){
+//         return view('backend.layouts.file-manager');
+//     })->name('file-manager');
+//     // user route
+//     Route::resource('users','UsersController');
+   
+// });
+
+Route::get('/admin', 'HomeController@search')->name('dashboard');
