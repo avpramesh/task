@@ -23,5 +23,14 @@ class UserSeeder extends Seeder
                 'gender' => Arr::random($gender),
             ]);
         }
+        DB::table('users')->insert([
+            'first_name' => 'Admin',
+            'last_name' => 'Test',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('password'),
+            'annual_income' => rand(10000,1000000),
+            'dob' => '2000=02-02',
+            'gender' => Arr::random($gender),
+        ]);
     }
 }
